@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>backstagetalks</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* 기본 설정 */
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        /* overflow: hidden; */
+      }
+
+      a {
+        text-decoration: none;
+      }
+      #menu a {
+        color: black;
+      }
+      .inner p {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+      }
+      .inner h1 {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 2.5rem;
+        text-align: left;
+      }
+
+      p #small {
+        font-size: 0.7rem;
+      }
+
+      /* 시맨틱 구현 */
+      #title {
+        width: 260px;
+        float: left;
+      }
+
+      #menu {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        text-align: right;
+        margin: 10px;
+        z-index: 1000;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+      }
+      #bottomLeft {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 260px;
+        font-size: 0.9rem;
+        padding: 10px;
+        margin: 10px;
+        z-index: 1000;
+        text-align: left;
+      }
+      #bottomRight {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        font-size: 0.9rem;
+        padding: 10px;
+        margin: 10px;
+        z-index: 1000;
+        text-align: right;
+      }
+      @media screen and (max-width: 767px) {
+        body {
+          overflow: auto;
+        }
+        .child {
+          flex-direction: column;
+          padding: 20px;
+        }
+        #menu {
+          display: none;
+        }
+        #bottomLeft {
+          position: static;
+          width: auto;
+          margin-top: 2rem;
+          text-align: left !important;
+          padding: 0 1rem;
+        }
+        #bottomRight {
+          position: static;
+          width: auto;
+          margin-top: 2rem;
+          text-align: right !important;
+          padding: 0 1rem;
+        }
+        .inner {
+          width: 100%;
+          max-width: 100%;
+          text-align: center;
+        }
+        .inner h1 {
+          font-size: 1.8rem !important;
+        }
+        .inner p {
+          font-size: 1rem !important;
+        }
+        img {
+          max-height: 40vh;
+        }
+      }
+
+      /* 스크롤 스냅 */
+      .container {
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+      }
+
+      .child {
+        height: 100vh;
+        scroll-snap-align: start;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        padding: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      }
+      .inner {
+        width: 960px;
+        max-width: 90%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* 배경색 클래스 */
+      .box1 {
+        background-color: #fce59b;
+      }
+
+      .box2 {
+        background-color: #ff5b87;
+      }
+      .box3 {
+        background-color: white;
+      }
+      .box4 {
+        background-color: #00c1b5;
+      }
+      .box5 {
+        background-color: #ff651a;
+      }
+      .box6 {
+        background-color: #ffbe00;
+      }
+
+      .box7 {
+        background-color: #1d3fbb;
+      }
+
+      .box8 {
+        background-color: #e30512;
+      }
+
+      /* a태그 색깔처리 */
+      .box1 a,
+      .box2 a,
+      .box4 a,
+      .box5 a,
+      .box6 a,
+      .box7 a,
+      .box8 a {
+        color: white;
+      }
+      .box3 a {
+        color: #e56598;
+      }
+      /* 이미지 크기 조정 */
+      img {
+        max-width: 80%;
+        max-height: 80vh;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- 첫번째-->
+      <section class="child box1" id="issue1">
+        <div class="inner">
+          <h1>BACKSTAGETALK</h1>
+          <img src="backstagetalks_cover_issue_8.png" alt="사진" />
+          <p>Issue #8</p>
+          <p>
+            <a href="https://brot.sk/products/backstage-talks-8">BUY HERE</a>
+          </p>
+          <p>
+            or in
+            <a href="https://backstagetalks.com/stocklist.php"
+              >selected stores</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- 두 번째-->
+      <section class="child box2" id="issue2">
+        <div class="inner">
+          <img src="backstagetalks_cover_issue_7.png" alt="사진입니당" />
+          <p>Issue #7</p>
+          <p>
+            <a href="https://brot.sk/products/backstage-talks-7">BUY HERE</a>
+            (Europe)
+          </p>
+          <p>
+            <a
+              href="https://www.newsstand.co.uk/196-business-and-finance-magazines/33211-subscribe-to-backstage-talks-magazine-subscription.aspx"
+              >BUY HERE
+            </a>
+            (UK & Overseas)
+          </p>
+          <p>
+            or in
+            <a href="https://backstagetalks.com/stocklist.php"
+              >selected stores</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- 세 번째 -->
+      <section class="child box3" id="issue3">
+        <div class="inner">
+          <img src="backstagetalks_cover_issue_6.png" alt="사진" />
+          <p>Issue #6</p>
+          <p>
+            <a
+              href="https://brot.sk/products/backstage-talks-6?_pos=2&_sid=1c5730cc8&_ss=r"
+              >BUY HERE</a
+            >
+          </p>
+          <p>
+            or in
+            <a href="https://backstagetalks.com/stocklist.php"
+              >selected stores</a
+            >
+          </p>
+        </div>
+      </section>
+      <!-- 4번쨰 -->
+      <section class="child box4" id="issue4">
+        <div class="inner">
+          <img src="backstagetalks_cover_issue_5.png" alt="사진입니당" />
+          <p>Issue #6</p>
+          <p>
+            <a
+              href="https://brot.sk/products/backstage-talks-5?_pos=3&_sid=1c5730cc8&_ss=r"
+              >BUY HERE</a
+            >
+          </p>
+          <p>
+            or in
+            <a href="https://backstagetalks.com/stocklist.php"
+              >selected stores</a
+            >
+          </p>
+        </div>
+      </section>
+      <!-- 5번째 -->
+      <section class="child box5" id="issue5">
+        <div class="inner">
+          <img src="backstagetalks_cover_issue_4.png" alt="사진입니당" />
+          <p>Issue #4 is sold out.</p>
+          <p>
+            if you are lucky, you may get the last pieces in
+            <a href="https://backstagetalks.com/stocklist.php"
+              >selected stores</a
+            >
+          </p>
+        </div>
+      </section>
+      <!-- 6번째 -->
+      <section class="child box6" id="issue6">
+        <div class="inner">
+          <img src="backstagetalks_cover_issue_3.png" alt="사진입니당" />
+          <p>Issue #3 is sold out.</p>
+          <p>
+            if you are lucky, you may get the last pieces in
+            <a href="https://backstagetalks.com/stocklist.php"
+              >selected stores</a
+            >
+          </p>
+        </div>
+      </section>
+      <!-- 7번째 -->
+      <section class="child box7" id="issue7">
+        <div class="inner">
+          <img src="backstagetalks_cover2017.png" alt="사진입니당" />
+          <p>Issue #2</p>
+          <p>
+            <a
+              href="https://brot.sk/products/backstage-talks-2?_pos=1&_sid=1c5730cc8&_ss=r"
+              >BUY HERE</a
+            >
+          </p>
+          <p>
+            or in
+            <a href="https://backstagetalks.com/stocklist.php"
+              >selected stores</a
+            >
+          </p>
+        </div>
+      </section>
+      <!-- 8번째 -->
+      <section class="child box8" id="issue8">
+        <div class="inner">
+          <img src="backstagetalks_cover2016_n.png" alt="사진입니당" />
+          <p>Issue #1 is sold out.</p>
+          <p>
+            if you are lucky, you may get the last pieces in
+            <a href="https://backstagetalks.com/stocklist.php"
+              >selected stores</a
+            >
+          </p>
+          <div id="bottomLeft">
+            <p>
+              Backstage Talks is a magazine of casual, but in depth dialogues on
+              design and business. Our decisions shape and influence this
+              complex world—to have a chance to make the right ones, we need to
+              talk.
+            </p>
+            <p>
+              <span id="small"
+                >© 2025
+                <a href="https://buromilk.com/">Published by Büro Milk</a></span
+              >
+            </p>
+            <p>
+              <a href="https://backstagetalks.com/privacy-policy.php"
+                >Privacy Policy</a
+              >
+            </p>
+          </div>
+          <div id="bottomRight">
+            <p>info@backstagetalks.com</p>
+          </div>
+          <div id="menu">
+            <a href="#issue1">#issue1</a>
+            <a href="#issue2">#issue2</a>
+            <a href="#issue3">#issue3</a>
+            <a href="#issue4">#issue4</a>
+            <a href="#issue5">#issue5</a>
+            <a href="#issue6">#issue6</a>
+            <a href="#issue7">#issue7</a>
+            <a href="#issue8">#issue8</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
